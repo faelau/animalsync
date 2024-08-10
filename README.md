@@ -4,11 +4,20 @@ Sync your watched state from anilist.co to MyAnimeList.
 
 # Usage
 
-Initialize the client (authenticate to MyAnimeList) and set required config values.
+Set the user which should be synced from anilist.co
+```
+docker run --rm -ti -v animalsync:/root/.config/ani2mal --name animalsync ghcr.io/faelau/animalsync:main --set-user
+```
+
+Set ClientID and ClientSecret (see [MyAnimeList Authorization API documentation](https://myanimelist.net/apiconfig/references/authorization) for further information)
+```
+docker run --rm -ti -v animalsync:/root/.config/ani2mal --name animalsync ghcr.io/faelau/animalsync:main --set-client
+```
+
+Login and paste the retrieved AuthCode back into the terminal:
 
 ```
-docker run -ti -v animalsync:/root/.config/ani2mal --name animalsync \
-  ghcr.io/faelau/animalsync:main --set-user --set-client --login
+docker run --rm -ti -v animalsync:/root/.config/ani2mal --name animalsync ghcr.io/faelau/animalsync:main --login
 ```
 
 Run the container in background:
