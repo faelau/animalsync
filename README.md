@@ -2,7 +2,7 @@
 
 Sync your watched state from anilist.co to MyAnimeList.
 
-# Usage
+## Configuration
 
 Set the user which should be synced from anilist.co
 ```
@@ -30,8 +30,11 @@ docker run --rm -ti -v animalsync:/root/.config/ani2mal \
   --name animalsync ghcr.io/faelau/animalsync:main --sync
 ```
 
+## Usage
+
 Run the container in background:
 
 ```
-docker run -d -v animalsync:/root/.config/ani2mal --name animalsync ghcr.io/faelau/animalsync:main
+docker run -d -v animalsync:/root/.config/ani2mal \
+  --name animalsync ghcr.io/faelau/animalsync:main
 ```
